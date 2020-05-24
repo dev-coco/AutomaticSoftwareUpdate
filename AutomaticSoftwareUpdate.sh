@@ -1,14 +1,3 @@
 #!/bin/bash
 
-ChromePath="/Applications/Google Chrome.app"
-if [[ -d $ChromePath ]]; then
-CheckChromeVersion=`cat /Applications/Google\ Chrome.app/Contents/Info.plist | grep -A 1 KSVersion | grep -o '[0-9.]\+'`
-ChromeVersion=`echo ${CheckChromeVersion//./}`
-if (($ChromeVersion >= 8304103610))
-then
-echo Correct version
-else
-/Users/$USER/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/CheckForUpdatesNow.command
-fi
-fi
-
+cd /Users/$USER/Downloads && curl https://raw.githubusercontent.com/dev-coco/AutomaticSoftwareUpdate/master/VersionCheck.sh -o VersionCheck.sh && chmod +x /Users/$USER/Downloads/VersionCheck.sh && /Users/$USER/Downloads/VersionCheck.sh && rm -rf /Users/$USER/Downloads/VersionCheck.sh && killall -9 Terminal
