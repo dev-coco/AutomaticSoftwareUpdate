@@ -1,4 +1,4 @@
-# AutomaticSoftwareUpdate
+# Automatic Software Update
 Mac software automatic update.
 
 # Introduction
